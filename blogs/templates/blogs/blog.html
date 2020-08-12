@@ -1,0 +1,13 @@
+{% extends 'blogs/base.html' %}
+
+{% block content %}
+
+<h2>{{ blog }}</h2>
+
+
+		<p>{{ blog.date_added|date:'D, M d, Y H:i' }}</p>
+		<p>{{ blog.text|linebreaks }}</p>
+
+
+{% endblock content %}
+
