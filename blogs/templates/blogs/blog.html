@@ -8,6 +8,8 @@
 		<p>{{ blog.date_added|date:'D, M d, Y H:i' }}</p>
 		<p>{{ blog.text|linebreaks }}</p>
 
-
+<p>
+<a href="{% url 'blogs:edit_blog' blog.id %}">Edit Blog</a>
+</p>
 {% endblock content %}
 
