@@ -1,10 +1,27 @@
-<h1>Woltab Blog</h1>
-<h3>The modern Blogsite</h3>
-<p>
-	
-<a href="{% url 'blogs:index' %}"><b>Home</b></a>
+<head>
+		{% block internal_css %}
+		<style type="text/css">
+			h1{
+				height: 150px;
+				color: #0000ff;
+				font-size: 32px;
+				font-family: "Courier New", Courier, monospace;
+				text-shadow: 1px 1px 1px #000000;
+				text-transform: capitalize;
+				background-color: DarkCyan;
+				text-allign: center;
+				text-indent: 600px;
+				padding-top: 20px;}
+		</style>
+		{% endblock %}
+	</head>
+<a href="{% url 'blogs:index' %}">
+	<h1>
+		{% load static %}
+			<img src="{% static "blogs/logo.png" %}" alt="Logo" align = "centre" >
+	</h1>
+</a>
 
-</p>
 
 {% block content %}{% endblock content %}
 

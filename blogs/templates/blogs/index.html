@@ -1,22 +1,21 @@
 {% extends "blogs/base.html" %}
 
 {% block content %}
-
+<body>
 <ul>
 	{% for blog in blogs %}
 		<li>
 			<a href="{% url 'blogs:blog' blog.id %}"><b>{{ blog }}</b></a>
 			<br />
-			<p>{{ blog.date_added|date:'D, M d, Y H:i' }}</p>
+			<p><b>{{ blog.date_added|date:'D, M d, Y H:i' }}</b></p>
 			<p>{{ blog.text|linebreaks|truncatewords_html:75 }}</p>
 		</li>
 	{% empty %}
 		<li>No topics  have been added yet.</li>
 	{% endfor %}
 </ul>
+<a href="{% url 'blogs:new_blog' %}" target="_blank">Add a new Blog</a>
 
-<a href="{% url 'blogs:new_blog' %}">Add a new Blog</a>
-
-
+</body>
 {% endblock content %}
 
